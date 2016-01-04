@@ -5,6 +5,10 @@ namespace AbuseIO\Notification;
 use Symfony\Component\ClassLoader\ClassMapGenerator;
 use Log;
 
+/**
+ * Class Factory
+ * @package AbuseIO\Notification
+ */
 class Factory
 {
     /**
@@ -17,11 +21,13 @@ class Factory
 
     /**
      * Get a list of installed AbuseIO notifications and return as an array
+     *
      * @return array
      */
     public static function getNotification()
     {
         $notificationClassList = ClassMapGenerator::createMap(base_path().'/vendor/abuseio');
+        /** @noinspection PhpUnusedParameterInspection */
         $notificationClassListFiltered = array_where(
             array_keys($notificationClassList),
             function ($key, $value) {
@@ -45,6 +51,7 @@ class Factory
 
     /**
      * Create and return a Collector object and it's configuration
+     *
      * @param string $requiredName
      * @return object
      */

@@ -5,6 +5,10 @@ namespace AbuseIO\Notification;
 use ReflectionClass;
 use Log;
 
+/**
+ * Class Notification
+ * @package AbuseIO\Notification
+ */
 class Notification
 {
     /**
@@ -15,6 +19,8 @@ class Notification
 
     /**
      * Create a new Notification instance
+     *
+     * @param object $notification instance class
      */
     public function __construct($notification)
     {
@@ -23,6 +29,8 @@ class Notification
 
     /**
      * Generalize the local config based on the parser class object.
+     *
+     * @param object $notification instance class
      * @return void
      */
     protected function startup($notification)
@@ -45,6 +53,7 @@ class Notification
 
     /**
      * Return failed
+     *
      * @param  string $message
      * @return array
      */
@@ -60,6 +69,7 @@ class Notification
 
     /**
      * Return success
+     *
      * @return array
      */
     protected function success()
@@ -74,6 +84,7 @@ class Notification
 
     /**
      * Cleanup anything a parser might have left (basically, remove the working dir)
+     *
      * @return void
      */
     protected function cleanup()

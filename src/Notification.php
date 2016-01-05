@@ -44,7 +44,7 @@ class Notification
         }
 
         Log::info(
-            '(JOB ' . getmypid() . ') ' . get_class($this) . ': ' .
+            get_class($this) . ': ' .
             'A notification module has been called: ' .
             config("{$this->configBase}.notification.name")
         );
@@ -62,7 +62,7 @@ class Notification
         $this->cleanup();
 
         Log::warning(
-            '(JOB ' . getmypid() . ') ' . get_class($this) . ': ' .
+            get_class($this) . ': ' .
             'Notification run failed for module ' . config("{$this->configBase}.notification.name")
             . ' has ended with errors. ' . $message
         );
@@ -83,7 +83,7 @@ class Notification
         $this->cleanup();
 
         Log::info(
-            '(JOB ' . getmypid() . ') ' . get_class($this) . ': ' .
+            get_class($this) . ': ' .
             'Notification run completed for module : ' . config("{$this->configBase}.notification.name")
         );
 

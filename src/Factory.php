@@ -73,7 +73,7 @@ class Factory
 
                 } else {
                     Log::info(
-                        '(JOB ' . getmypid() . ') \AbuseIO\Notification\Factory: ' .
+                        'AbuseIO\Notification\Factory: ' .
                         "The notification {$notificationName} has been disabled and will not be used."
                     );
 
@@ -84,7 +84,7 @@ class Factory
 
         // No valid notifications found
         Log::info(
-            '(JOB ' . getmypid() . ') \AbuseIO\Notification\Factory: ' .
+            'AbuseIO\Notification\Factory: ' .
             "The notification {$requiredName} is not present on this system"
         );
         return false;

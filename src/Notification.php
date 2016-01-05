@@ -61,6 +61,12 @@ class Notification
     {
         $this->cleanup();
 
+        Log::warning(
+            '(JOB ' . getmypid() . ') ' . get_class($this) . ': ' .
+            'Notification run failed for module ' . config("{$this->configBase}.notification.name")
+            . ' has ended with errors. ' . $message
+        );
+
         return [
             'errorStatus'   => true,
             'errorMessage'  => $message,
@@ -75,6 +81,11 @@ class Notification
     protected function success()
     {
         $this->cleanup();
+
+        Log::info(
+            '(JOB ' . getmypid() . ') ' . get_class($this) . ': ' .
+            'Notification run completed for module : ' . config("{$this->configBase}.notification.name")
+        );
 
         return [
             'errorStatus'   => false,

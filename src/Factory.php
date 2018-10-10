@@ -2,7 +2,7 @@
 
 namespace AbuseIO\Notification;
 
-use Symfony\Component\ClassLoader\ClassMapGenerator;
+use Composer\Autoload\ClassMapGenerator;
 use Log;
 
 /**

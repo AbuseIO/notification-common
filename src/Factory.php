@@ -30,7 +30,7 @@ class Factory
         /** @noinspection PhpUnusedParameterInspection */
         $notificationClassListFiltered = array_where(
             array_keys($notificationClassList),
-            function ($key, $value) {
+            function ($value, $key) {
                 // Get all notifications, ignore all other packages.
                 if (strpos($value, 'AbuseIO\Notification\\') !== false) {
                     return $value;

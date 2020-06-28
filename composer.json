@@ -1,7 +1,7 @@
 {
     "name": "abuseio/notification-common",
     "description": "Repository for the AbuseIO notifications that holds shared methods",
-    "version": "3.0.4",
+    "version": "3.0.5",
     "keywords": ["laravel", "abuseio", "notification", "common"],
     "homepage": "http://abuse.io",
     "type": "library",
